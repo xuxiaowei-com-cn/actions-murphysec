@@ -1,0 +1,22 @@
+name: Actions-Murphysec
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v2
+
+      - name: Download Murphysec binary
+        run: |
+          curl -s "https://github.com/murphysecurity/murphysec/releases/download/v3.0.1/murphysec-linux-amd64" --output "murphysec"
+          chmod +x murphysec
+
+      - name: Run Murphysec
+        run: ./murphysec scan
