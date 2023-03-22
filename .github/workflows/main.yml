@@ -20,4 +20,4 @@ jobs:
           sudo mv murphysec /usr/local/bin/murphysec
 
       - name: Run Murphysec
-        run: ./murphysec scan
+        run: murphysec scan
