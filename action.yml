@@ -1,0 +1,13 @@
+name: 'actions-murphysec'
+description: 'This is my first GitHub Action'
+inputs:
+  name:
+    description: 'Name of the person to greet'
+    required: true
+    default: 'World'
+outputs:
+  greeting:
+    description: 'The greeting that was output by the Action'
+runs:
+  using: 'node12'
+  main: 'index.js'
