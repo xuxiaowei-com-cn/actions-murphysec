@@ -17,6 +17,7 @@ jobs:
         run: |
           curl -s "https://github.com/murphysecurity/murphysec/releases/download/v3.0.1/murphysec-linux-amd64" --output "murphysec"
           chmod +x murphysec
+          sudo mv murphysec /usr/local/bin/murphysec
 
       - name: Run Murphysec
         run: ./murphysec scan
